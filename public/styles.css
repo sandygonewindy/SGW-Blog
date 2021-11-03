@@ -65,25 +65,29 @@ p, h1, h2, h3, a, ul{
         color: crimson;
     }
 /* details styles */
-    .details{
-        position: relative;
+    .blog-title{
+        text-decoration: underline;
+    }
+    .details-form{
+        display: inline-block;
     }
     .delete{
-        position: absolute;
-        top: 0px;
-        right: 0px;
+        margin-top: 50px;
         border-radius: 50%;
         padding: 8px;
+        background-color: red;
+        color: white;
     }
     .delete:hover, .update:hover {
         cursor: pointer;
         box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
     }
     .update{
-        position: absolute;
-        top: 0px;
-        right: 80px;
+        display: inline-block;
         border-radius: 50%;
+        margin-right: 20px;
+        background-color: blue;
+        color: white;
         padding: 8px;
     }
 /* create styles */
