@@ -9,15 +9,17 @@
         <div class="content">
             <p><%= blog.body %></p>
         </div>
-        <a class="delete" data-doc="<%= blog._id %>">
-            <!-- <img src="" alt="delete icon"> -->
-            <!-- delete -->
-            <img src="delete.png" alt="delete icon">
-        </a>
+        <form method = "POST" action="/blogs/<%= blog._id %>?_method=DELETE">
+            <button class = "delete">Delete</button>
+        </form>
+        <form method = "GET" action="/blogs/edit/<%= blog.id %>">
+            <button class = "update">Update</button>
+        </form>
 
     </div>
     
     <%- include('../partials/footer.ejs') %>
+    <% /* %>
     <script>
         const trashcan = document.querySelector('a.delete');
         trashcan.addEventListener('click', (e) => {
@@ -32,7 +34,7 @@
             })
         });
     </script>
-    <% /* %>
+    
     (Unsure) Reason for not redirecting using a href in the anchor tag maybe
     Using href, we would be redirected regardless of wether the delete operation in the database is completed or not
     Using the above method, it makes sure that the delete operation is completed and then the redirect takes place

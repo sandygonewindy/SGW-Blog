@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 const blogRoutes = require('./routes/blogRoutes');
 const app = express();
 
@@ -13,6 +14,8 @@ mongoose.connect(dbURI)
     .catch((err) => console.log(err));
 
 app.set('view engine', 'ejs');
+
+app.use(methodOverride('_method'));
 
 // middleware and static files
 app.use(express.static('public'));
